@@ -1,0 +1,27 @@
+[project]
+name = "mxmda"
+version = "0.1.0"
+description = "Matrix Mail Delivery Agent"
+
+authors = [
+  { name="Olof Johansson", email="olof@ethup.se" },
+]
+
+readme = "README"
+requires-python = ">=3.6"
+
+dependencies = [
+  "matrix-nio[e2e]",
+  "PyYAML",
+  "requests",
+]
+
+[project.scripts]
+mxmda = "mxmda.__main__:issue_1995"
+
+[project.urls]
+"Homepage" = "https://github.com/olof/mxmda"
+"Bug Tracker" = "https://github.com/olof/mxmda/issues"
+
+[tool.setuptools]
+packages = ["mxmda"]
