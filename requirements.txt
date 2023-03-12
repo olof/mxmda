@@ -1,3 +1,0 @@
-matrix-nio[e2e]
-PyYAML
-requests
