@@ -203,9 +203,17 @@ def mxid_to_email(mxid):
         raise ValueError("Invalid mxid %s" % mxid)
     return mxid[1:].replace(':', '@', 1)
 
+def msg_id(event_id):
+    # FIXME: example.invalid, we can and should do better.
+    #        how do i access the hs domain? which one? mxmda's hs,
+    #        the room's hs or the originating message hs?
+    return f'<{event_id}@example.invalid>'
+
 def event_to_email(room, event):
     text = event.body.strip()
     topline = text.split("\n", 1)[0]
+    source = event.source
+    related = source['content'].get('m.relates_to', {}).get('event_id')
 
     subject = topline if len(topline) < 70 else topline[0:67] + '...'
 
@@ -213,10 +221,12 @@ def event_to_email(room, event):
     mail.add_header("Subject", topline)
     mail.add_header("From", mxid_to_email(event.sender))
     mail.add_header("To", mxid_to_email(room.machine_name))
-    mail.add_header("Message-Id", event.event_id)
+    mail.add_header("Message-Id", msg_id(event.event_id))
+    if related:
+        mail.add_header("References", msg_id(related))
     mail.add_header("Date", formatdate(event.server_timestamp/1000))
     mail.add_alternative(text)
-    mail.add_alternative(bytes(yaml.dump(event.source, indent=2), 'utf-8'),
+    mail.add_alternative(bytes(yaml.dump(source, indent=2), 'utf-8'),
                          maintype='application', subtype='mxmda',
                          params={
                             'type': event.source['type'],
