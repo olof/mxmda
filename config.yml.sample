@@ -1,0 +1,13 @@
+---
+user: "@username:example.com"
+
+# Craft a auth message event, however you like;
+# will be passed on to the homeserver as is.
+
+# auth:
+#   type: "org.matrix.login.jwt"
+#   token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImF1ZCI6Im1hdHJpeC5leGFtcGxlLmNvbSIsImV4cCI6MTY3ODU4NzY2MSwibmJmIjoxNjc4NTg0MDYxLCJpc3MiOiJsb2dpbi5leGFtcGxlLmNvbSIsImlhdCI6MTY3ODU4NDA2MX0.W3CKAJr89xCAOeDSM1KvGYy8aE190Agtl20sZTpQyMOlZ3esJB37rEgh6Nf4EOxrjDooO9BIr_viScqErTw451j1x7VVvTmqxGMvf6DmEHYWlSZyhdLQL1CcinIeYqNL2lXyBvMcPLTxdLVWRS4AMTFhx63h72h5Zk7fghKA87_dQMDqYzXk4AMv7Ep6mRwOVU3LSWJA8-x8iW40pHEzMT1eiM3zzuRjOqVSpmg3KYaO7wYETWJg4v_FPMfF0mDag7IbgnzqFQUmrCJ7F_SDRNraKUBpjhGUmFnnZgOv1-slK-8ch-7cW1pY1_0CqJILvVeDRD_fcsY0w96bsVw-Lg"
+
+# auth:
+#   type: "org.matrix.login.password"
+#   password: "hunter2"
