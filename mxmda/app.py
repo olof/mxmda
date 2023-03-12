@@ -177,7 +177,7 @@ class Application:
             with open(self.device_file) as fh:
                 self.device = yaml.safe_load(fh)
         except FileNotFoundError:
-            return {}
+            self.device = {}
 
 class Service(Application):
     def __init__(self, args):
