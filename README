@@ -1,0 +1,8 @@
+Use mutt as your matrix client! Or not.
+
+Filter your incoming matrix messages with spamassassin!? Or not.
+
+Have a systemd inotify trigger start your service when a new
+message arrives. Or not.
+
+Write your matrix bots in shell or brainfuck. What else?
