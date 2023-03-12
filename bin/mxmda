@@ -1,2 +1,2 @@
 #!/bin/sh
-python3 -m mxmda "$@"
+exec python3 -m mxmda "$@"
