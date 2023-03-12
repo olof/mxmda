@@ -1,0 +1,6 @@
+Example systemd service assumes something like:
+
+ adduser --system --group --home /var/lib/mxmda mxmda
+ sudo -u mxmda git clone $PWD/.. /var/lib/mxmda/source
+ sudo -u mxmda python3 -m venv /var/lib/mxmda/venv
+ sudo -u mxmda /var/lib/mxmda/venv/bin/pip install /var/lib/mxmda/source

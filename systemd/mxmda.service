@@ -1,0 +1,11 @@
+[Unit]
+Description=Matrix Mail Delivery Agent
+
+[Service]
+ExecStart=/var/lib/mxmda/venv/bin/mxmda -v service -m /var/lib/mxmda/mail/inbox
+User=mxmda
+Group=mxmda
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
